@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NSA</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Monitor del Navegador</h1>
+        <div id="status-internet"></div>
+        <div id="geo-info"></div>
+        <button id="btn-localitzar">Obtenir la meva posició</button>
+    </div>
+
+<script>
+
+function localitzar() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition (
+
+            function(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+
+            localStorage.setItem("latitud", lat);
+            localStorage.setItem("longitud", lon);
+
+            var geoDiv = document.getElementById("geo-info");
+                
+            var p1 = document.createElement("p"); 
+            p1.textContent = "Latitud: " + lat;
+
+            var p2 = document.createElement("p"); 
+            p2.textContent = "Longitud: " + lon; 
+
+            geoDiv.appendChild(p1); 
+            geoDiv.appendChild(p2); 
+
+            if (navigator.onLine) {
+                document.body.style.backgroundColor = "#F8C8DC";
+            }   else {
+                document.body.style.backgroundColor = "#8DB600";
+            }
+        });
+    } else { 
+        alert("La geolocalització no és compatible amb aquest navegador.");
+    } 
+} 
+</script>
+
+</body>
+
+</html>
