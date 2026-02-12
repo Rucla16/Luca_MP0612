@@ -14,8 +14,8 @@ class Frieza {
         this.nom = nom;
     }
     destruirPlaneta() {
-        if(poblacio == 10) {
-            poblacio = 0;
+        if(Saiyan.poblacio == 10) {
+            Saiyan.poblacio = 0;
             console.log("Frieza ha destruit el planeta!");
         }
         
@@ -23,4 +23,5 @@ class Frieza {
 }
 
 Saiyan.crear_saiyan(nou_saiyan);
+
 Frieza.destruirPlaneta();
