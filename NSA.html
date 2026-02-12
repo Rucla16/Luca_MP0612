@@ -19,27 +19,27 @@ function localitzar() {
         navigator.geolocation.getCurrentPosition (
 
             function(position) {
-            var lat = position.coords.latitude;
-            var lon = position.coords.longitude;
+            var latitud = position.coords.latitude;
+            var longitud = position.coords.longitude;
 
-            localStorage.setItem("latitud", lat);
-            localStorage.setItem("longitud", lon);
+            localStorage.setItem("latitud", latitud);
+            localStorage.setItem("longitud", longitud);
 
             var geoDiv = document.getElementById("geo-info");
                 
-            var p1 = document.createElement("p"); 
-            p1.textContent = "Latitud: " + lat;
+            var element1 = document.createElement("e1"); 
+            element1.textContent = "Latitud: " + latitud;
 
-            var p2 = document.createElement("p"); 
-            p2.textContent = "Longitud: " + lon; 
+            var element2 = document.createElement("e2"); 
+            element2.textContent = "Longitud: " + longitud; 
 
-            geoDiv.appendChild(p1); 
-            geoDiv.appendChild(p2); 
+            geoDiv.appendChild(element1); 
+            geoDiv.appendChild(element2); 
 
             if (navigator.onLine) {
-                document.body.style.backgroundColor = "#F8C8DC";
+                document.body.style.backgroundColor = "#E6E6FA";
             }   else {
-                document.body.style.backgroundColor = "#8DB600";
+                document.body.style.backgroundColor = "#FDFD96";
             }
         });
     } else { 
